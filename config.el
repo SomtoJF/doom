@@ -100,3 +100,6 @@
 
 (unless (string-match-p "^Power N/A" (battery))
 (display-battery-mode 1))
+;;
+;; Change splash Image
+(setq fancy-splash-image (concat doom-user-dir "doom-emacs-matcha-green.svg"))
