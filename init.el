@@ -13,9 +13,9 @@
 ;;
 ;;      Alternatively, press 'gd' (or 'C-c c d') on a module to browse its
 ;;      directory (for easy access to its source code).
+;;
 ;; Add project folders
-;; (projectile-add-known-project “~/Desktop/Code/dsa”)
-;; (projectile-add-known-project "~/Desktop/Code/Three")
+(setq projectile-project-search-path '("~/Desktop/Code" "~/Documents/OrgFiles/School"))
 ;;
 (doom! :input
        ;;bidi              ; (tfel ot) thgir etirw uoy gnipleh
