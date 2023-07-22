@@ -32,7 +32,7 @@
 ;; There are two ways to load a theme. Both assume the theme is installed and
 ;; available. You can either set `doom-theme' or manually load a theme with the
 ;; `load-theme' function. This is the default:
-(setq doom-theme 'doom-Iosvkem)
+(setq doom-theme 'doom-dracula)
 
 ;; This determines the style of line numbers in effect. If set to `nil', line
 ;; numbers are disabled. For relative line numbers, set this to `relative'.
@@ -102,4 +102,16 @@
 (display-battery-mode 1))
 ;;
 ;; Change splash Image
-(setq fancy-splash-image (concat doom-user-dir "doom-emacs-matcha-green.svg"))
+;; (setq fancy-splash-image (concat doom-user-dir "Backgrounds/cute-demon.png"))
+
+ (let ((alternatives '("cute-demon.png"
+                      "trancendent-gnu.png"
+                      "doom-emacs-green.svg"
+                      "I-am-doom.png")))
+  (setq fancy-splash-image
+        (concat doom-user-dir "Backgrounds/"
+               (nth (random (length alternatives)) alternatives))))
+;;
+;; Enable autosave
+(setq auto-save-default t
+      make-backup-files t)
