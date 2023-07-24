@@ -115,3 +115,11 @@
 ;; Enable autosave
 (setq auto-save-default t
       make-backup-files t)
+
+;; Enable LSP for Java
+(after! java-mode
+  (add-hook 'java-mode-hook #'lsp-deferred))
+
+;; Enable company mode for autocompletion
+(after! lsp-java
+  (add-hook 'java-mode-local-vars-hook #'company-mode))
