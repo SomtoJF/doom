@@ -32,7 +32,7 @@
 ;; There are two ways to load a theme. Both assume the theme is installed and
 ;; available. You can either set `doom-theme' or manually load a theme with the
 ;; `load-theme' function. This is the default:
-(setq doom-theme 'doom-tokyo-night)
+(setq doom-theme 'doom-gruvbox)
 
 ;; This determines the style of line numbers in effect. If set to `nil', line
 ;; numbers are disabled. For relative line numbers, set this to `relative'.
@@ -119,6 +119,10 @@
 ;; Enable LSP for Java
 (after! java-mode
   (add-hook 'java-mode-hook #'lsp-deferred))
+
+;; in ~/.doom.d/config.el
+(after! org
+  (add-to-list 'org-export-backends 'latex))
 
 ;; Enable company mode for autocompletion
 (after! lsp-java
