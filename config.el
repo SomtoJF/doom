@@ -95,7 +95,6 @@
            (unless (string= "-" project-name)
              (format (if (buffer-modified-p)  " ◉ %s" "  ●  %s") project-name))))))
 ;;
-;;
 ;; It's nice to know how much battery you have left
 
 (unless (string-match-p "^Power N/A" (battery))
@@ -127,3 +126,10 @@
 ;; Enable company mode for autocompletion
 (after! lsp-java
   (add-hook 'java-mode-local-vars-hook #'company-mode))
+;;
+(setq doom-modeline-support-imenu t)
+;;
+(setq doom-modeline-env-version t)
+;;
+;; Enable format on save
+(add-hook 'prog-mode-hook 'format-all-mode)
