@@ -16,6 +16,10 @@
 ;;
 ;; Add project folders
 (setq projectile-project-search-path '("~/Desktop/Code" "~/Documents/OrgFiles/School"))
+;; Org mode default font Times new roman
+(after! org
+  (setq org-format-latex-options
+        (plist-put org-format-latex-options :font "Times")))
 ;;
 (doom! :input
        ;;bidi              ; (tfel ot) thgir etirw uoy gnipleh
