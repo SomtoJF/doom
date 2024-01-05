@@ -20,6 +20,13 @@
 (after! org
   (setq org-format-latex-options
         (plist-put org-format-latex-options :font "Times")))
+;; plantuml
+(with-eval-after-load 'org
+  ;; here goes your Org config :)
+  (require 'ob-plantuml)
+  (setq org-plantuml-jar-path "/opt/homebrew/Cellar/plantuml/1.2023.12/libexec/plantuml.jar")
+  ;; ....
+  )
 ;;
 (doom! :input
        ;;bidi              ; (tfel ot) thgir etirw uoy gnipleh
