@@ -14,8 +14,6 @@
 ;;      Alternatively, press 'gd' (or 'C-c c d') on a module to browse its
 ;;      directory (for easy access to its source code).
 ;;
-;; Add project folders
-(setq projectile-project-search-path '("~/Desktop/Code/JSTS"))
 ;; Org mode default font Times new roman
 (after! org
   (setq org-format-latex-options

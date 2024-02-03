@@ -21,7 +21,7 @@
 ;; See 'C-h v doom-font' for documentation and more examples of what they
 ;; accept. For example:
 ;;
-(setq doom-font (font-spec :family "Iosevka SS04" :size: 20 :weight 'normal)
+(setq doom-font (font-spec :family "Iosevka" :size: 20 :weight 'normal)
    doom-variable-pitch-font (font-spec :family "Iosevka" :size 13))
 ;;
 ;; If you or Emacs can't find your font, use 'M-x describe-font' to look them
@@ -32,8 +32,7 @@
 ;; There are two ways to load a theme. Both assume the theme is installed and
 ;; available. You can either set `doom-theme' or manually load a theme with the
 ;; `load-theme' function. This is the default:
-(setq doom-theme 'doom-tokyo-night)
-
+(setq doom-theme 'doom-outrun-electric)
 ;; This determines the style of line numbers in effect. If set to `nil', line
 ;; numbers are disabled. For relative line numbers, set this to `relative'.
 (setq display-line-numbers-type t)
@@ -74,6 +73,40 @@
 ;;
 ;; You can also try 'gd' (or 'C-c c d') to jump to their definition and see how
 ;; they are implemented.
+;;
+;;Install and use neotree icons
+(use-package all-the-icons
+  :ensure t)
+;;
+(use-package neotree
+  :ensure t
+  :init
+  (setq neo-theme (if (display-graphic-p) 'icons 'arrow)))
+;;
+;;
+;; Enable custom neotree theme (all-the-icons must be installed!)
+  (doom-themes-neotree-config)
+;;
+
+(with-eval-after-load 'all-the-icons
+  (setq neo-theme (if (display-graphic-p) 'icons 'arrow))
+  (setq neo-theme (if (display-graphic-p) 'icons 'arrow))
+  (setq neo-theme (if (display-graphic-p) 'icons 'arrow))
+  (setq neo-theme (if (display-graphic-p) 'icons 'arrow)))
+;;
+(message "graphics: " (display-graphic-p))
+
+(when (require 'all-the-icons-dired nil 'noerror)
+  (add-hook 'dired-mode-hook 'all-the-icons-dired-mode))
+
+(defun my/neotree-icons ()
+  (setq-local all-the-icons-dired-monochrome nil)
+  (setq-local neo-theme (if (display-graphic-p) 'icons 'arrow)))
+
+(add-hook 'neotree-mode-hook 'my/neotree-icons)
+
+;; Add project folders
+(setq projectile-project-search-path '("~/Desktop/Code/JSTS"))
 ;;
 ;; Bottom of the start page text
 (add-hook! '+doom-dashboard-functions :append
